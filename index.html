@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link 
+        rel="stylesheet" 
+        href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" 
+        crossorigin="anonymous"
+    >
+</head>
+
+<body>
+    <div class="container pt-5">
+        <div class="VideoControls">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h1 class="text-center mb-3">Play HTML5 video in revers</h1>
+                    <video 
+                        id="ReiherVideo" 
+                        preload="auto" 
+                        oncanplay="InitControls(this)" 
+                        style="width:100%; display: block;"
+                    >
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    </video>
+                    <input 
+                        type="range" 
+                        class="videopos" 
+                        style="width:100%;" 
+                        min="0" 
+                        max="0" 
+                        step="0.04" 
+                        onchange="GotoPos(ReiherVideo,this.value)"
+                    >
+                    <button class="btn btn-secondary down" onclick="PlayPause(ReiherVideo,this,1)">Play forward</button>
+                    <button class="btn btn-secondary up" onclick="PlayPause(ReiherVideo,this,-2)">Play backward</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js.js"></script>
+</html>
